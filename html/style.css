@@ -206,10 +206,11 @@ body {
     text-align: start;
     padding: 2rem;
     font-family: 'SFPB', sans-serif; /* Aplicar la fuente personalizada */
-    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
+    text-shadow: 0 0 2px rgb(56, 199, 255), 0 0 3px rgb(255, 255, 255);
     transition: transform 10s ease-in-out, color 0.3s ease-in-out, float-multidirectional 10.0s ease-in-out; /* Transición suave al escalar */
     transform: scale(1.5); /* Escala al pasar el mouse */
     animation: float-multidirectional 3s ease-in-out infinite;
+    color: rgb(87, 193, 255);
 }
 
 .panel p{
@@ -291,6 +292,7 @@ body {
     background: #fff1;
     color: white;
     font-size: 1.2rem;
+    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
 }
 
 .contactus form button{
@@ -306,7 +308,22 @@ body {
     width: auto;
     margin: auto;
     margin-top: 1rem;
+    border-radius: 0;
+    transition: transform 0.5s ease-in-out, border-radius 0.3s ease-in-out; /* Transición suave al escalar */
+}
+
+.contactus form button:hover{
+    background: rgba(140, 0, 255, 0.6);
+    box-shadow: 0 0 5px rgb(234, 188, 255), 0 0 10px rgb(209, 110, 255); /* Sombra blanca */
+    color: white;
+    font-size: 1rem;
+    font-family: 'Neon', sans-serif; /* Aplicar la fuente personalizada */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: auto;
+    margin: auto;
+    margin-top: 1rem;
     border-radius: 30rem;
+    transform: scale(1.1); /* Escala al pasar el mouse */
 }
 
 
@@ -348,6 +365,9 @@ h2{
 .panel form label{
     font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
     padding: 0.5rem;
+    font-size: 1.4rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.733), 0 0 3px rgba(255, 255, 255, 0.582);
 }
 
 .panel p{
@@ -357,7 +377,8 @@ h2{
     justify-content: start;
     font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
     font-size: 2rem;
-
+    text-shadow: 0 0 3px rgb(255, 255, 255), 0 0 5px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 
 }
 
