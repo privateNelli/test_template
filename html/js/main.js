@@ -21,9 +21,7 @@ xhr.addEventListener('readystatechange', function () {
             if (index < 1) { // Mostrar solo los primeros 5 pronósticos
                 content += `
                     <div class="forecast-item">
-                       
-                        <p>Temperatura: ${forecast.main.temp}°C</p>
-                        
+                        <p>Temperatura: ${Math.round(forecast.main.temp)}°C</p>
                     </div>
                     <hr>
                 `;
