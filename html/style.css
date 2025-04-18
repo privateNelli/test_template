@@ -37,7 +37,36 @@ body {
     z-index: 1;
 }
 
-.nnavbar ul{
+.weather-box{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.1rem;
+    width: 25rem;
+    padding: 1rem;
+    padding-bottom: 1em;
+    margin-top: 7rem;
+    margin-left: 1%;
+    flex-direction: row; /* Coloca los elementos en columna */
+    position: absolute; /* Necesario para posicionar los pseudo-elementos */
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+    background-color: rgba(1, 8, 24, 0.87);
+    z-index: -2;
+    border: 1px solid rgba(52, 255, 238, 0.507); 
+    box-shadow: 0 0 10px rgb(79, 229, 255), 0 0 15px rgb(52, 241, 255); /* Sombra blanca */
+    
+}
+
+.weather-box h3,p{
+    font-size: 1.2rem;
+    gap: 0.3rem;
+    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
+    text-align: center;
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul{
     list-style: none;
     display: flex;
     gap: 2rem;
@@ -74,9 +103,30 @@ body {
 }
 
 
+/* .product-item {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+  }
+  
+  .product-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
 
 .contactus .panel{
     grid-template-columns: 1fr;
+} */
+
+.product-item img{
+    width: 15rem;
+    height: 20rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255); /* Sombra blanca */
+    margin: auto;
 }
 
 /* Líneas horizontales para la clase main */
@@ -121,12 +171,13 @@ body {
 
 .product-item{
     border: 1px solid #fff1;
-    padding: 1rem;
-    background: #fff1;
-    border-radius: 5px;
-    width: 25%;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.815);
+    border-radius: 10px;
+    width: 20%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr ;
     gap: 1.5rem;
 }
 
@@ -136,8 +187,38 @@ body {
     width: 80%;
     grid-template-columns: 1fr 2fr;
     margin: 0 auto;
-    background: #fff1;
+    background: #000c;
+    border: 1px solid #fff1;
+    box-shadow: inset 0 0 10px rgba(222, 60, 255, 0.952), 0 0 10px rgba(249, 75, 255, 0.952); /* Sombra blanca */
     padding: 1rem;
+}
+
+.panel img{
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255); /* Sombra blanca */
+    margin: auto;
+}
+
+.panel h3{
+    font-size: 2rem;
+    text-align: start;
+    padding: 2rem;
+    font-family: 'SFPB', sans-serif; /* Aplicar la fuente personalizada */
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
+    transition: transform 10s ease-in-out, color 0.3s ease-in-out, float-multidirectional 10.0s ease-in-out; /* Transición suave al escalar */
+    transform: scale(1.5); /* Escala al pasar el mouse */
+    animation: float-multidirectional 3s ease-in-out infinite;
+}
+
+.panel p{
+    font-size: 1.5rem;
+    text-align: start;
+    padding: 2rem;
+    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
+    
 }
 
 .product-item h3{
@@ -145,8 +226,33 @@ body {
     font-weight: bold;
 }
 
-.product-desc{
+@font-face {
+    font-family: 'SFPM'; /* Nombre de la fuente */
+    src: url('SFPRODISPLAYMEDIUM.OTF') format('opentype'); /* Ruta a la fuente */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@Font-face {
+    font-family: 'SFPB'; /* Nombre de la fuente */
+    src: url('SFPRODISPLAYBOLD.OTF') format('opentype'); /* Ruta a la fuente */
+    font-weight: normal;
+    font-style: normal;
+}
+.product-desc h3{
+    font-size: 1.7rem;
+    text-align: center;
+    font-family: 'SFPB', sans-serif; /* Aplicar la fuente personalizada */
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
     }
+
+
+.product-desc p{
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
+}
 
 .navbar ul{
     list-style: none;
@@ -179,22 +285,28 @@ body {
 .contactus form input{
     padding: 1rem;
     margin: 0.5rem 0;
-    border-radius: 5px;
-    border: 1px solid #fff1;
+    border-radius: 10rem;
+    border: 2px solid rgb(104, 34, 110);
+    box-shadow: 0 0 10px rgb(240, 78, 255), 0 0 15px rgb(232, 114, 255); /* Sombra blanca */
     background: #fff1;
     color: white;
     font-size: 1.2rem;
 }
 
 .contactus form button{
-    padding: 1rem;
+    padding: 0.7rem;
     margin: 0.5rem 0;
-    border-radius: 5px;
     border: 1px solid #fff1;
-    background: #fff6;
+    background: rgba(140, 0, 255, 0.4);
+    box-shadow: 0 0 5px rgb(234, 188, 255), 0 0 10px rgb(209, 110, 255); /* Sombra blanca */
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-family: 'Neon', sans-serif; /* Aplicar la fuente personalizada */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: auto;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 30rem;
 }
 
 
@@ -223,14 +335,46 @@ h2{
     margin-top: 1rem;
     font-family: 'Neon', sans-serif; /* Aplicar la fuente personalizada */
     text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 1px rgb(255, 255, 255);
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, float-multidirectional 0.3s ease-in-out; /* Transición suave al escalar */
+    transition: transform 1s ease-in-out, color 0.3s ease-in-out, float-multidirectional 0.6 ease-in-out; /* Transición suave al escalar */
     margin-left: 2rem;
     
 }
 .bart:hover {
     /* animation: float 1s ease-in-out infinite; */
     transform: scale(1.5); /* Escala al pasar el mouse */
-    animation: float-multidirectional 3s ease-in-out infinite;
+    animation: float-multidirectional 1s ease-in-out infinite;
+}
+
+.panel form label{
+    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
+    padding: 0.5rem;
+}
+
+.panel p{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: start;
+    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
+    font-size: 2rem;
+
+
+}
+
+.panel textarea{
+    padding: 2rem;
+    /* margin: 0.5rem 0; */
+    border-radius: 10rem;
+    border: 2px solid rgb(104, 34, 110);
+    box-shadow: 0 0 10px rgb(240, 78, 255), 0 0 15px rgb(232, 114, 255); /* Sombra blanca */
+    background: #fff1;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
 }
 
 .btns {

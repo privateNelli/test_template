@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="js/main.js"> </script>
     <title>Document</title>
 </head>
 
 <body>
     <div class="bg-dark">
+        
         <div class="navbar">
             <div class="logo">
-                <h3 class="bart"><a href="">Inicio</a></h3>
+                <h3 class="bart"><a href="#start">Inicio</a></h3>
                 <!-- <button class="menu-toggle" aria-label="Abrir menú">
                     &#9776; 
                 </button> -->
@@ -28,6 +30,13 @@
             </nav>
         </div>
 
+        
+        <!-- <a name="#start"></a> -->
+        <div class="weather-box">
+            
+            <h3>Veamos que usar hoy...</h3>
+            <p>Temperatura actual:{{ weatherData }}</p>
+        </div>
         <div class="main">
             <h1>EmpireScents</h1>
             <h2>La magia embotellada</h2>
@@ -43,23 +52,23 @@
             <div class="product-list">
                 <div class="product-item">
                     <img src="/img/selixir.png" alt="Producto 1">
-                    <div>
-                        <h3>Producto 1</h3>
-                        <p>Descripción del producto 1.</p>
+                    <div class="product-desc">
+                        <h3>Sauvage Elixir</h3>
+                        <p>Clasico, misterioso, algunos creen que eres James Bond...</p>
                     </div>
                 </div>
                 <div class="product-item">
                     <img src="/img/leparfum.png" alt="Producto 2">
-                    <div>
-                        <h3>Producto 2</h3>
-                        <p>Descripción del producto 2.</p>
+                    <div  class="product-desc">
+                        <h3>Le Male Le Parfum</h3>
+                        <p>Eres el futuro CEO, no lo dudes. Elegante y poderoso...</p>
                     </div>
                 </div>
                 <div class="product-item">
                     <img src="/img/myslf.png" alt="Producto 3">
-                    <div>
-                        <h3>Producto 3</h3>
-                        <p>Descripción del producto 3.</p>
+                    <div  class="product-desc">
+                        <h3>YSL MYSLF</h3>
+                        <p>Acostumbrate a que te volteen a ver, este elixir te da aura...</p>
                     </div>
                 </div>
             </div>
@@ -69,7 +78,7 @@
         <div class="section aboutus">
             <h2>Sobre Nosotros</h2>
             <div class="panel">
-                <img src="/img/people.png" alt="Sobre Nosotros">
+                <img src="/img/aboutus.png" alt="Sobre Nosotros">
                 <div class="text">
                     <h3>EmpireScents</h3>
                     <p>En EmpireScents, nos dedicamos a crear fragancias únicas que capturan la esencia de la naturaleza y la elegancia. Nuestros productos están elaborados con ingredientes de alta calidad y un compromiso con la sostenibilidad.</p>
@@ -82,14 +91,15 @@
         <div class="section contactus">
             <h2>Contacto</h2>
             <div class="panel">
-                <p>Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.</p>
+                <p>Puedes hacer pedidos o hacernos consultas por este medio.</p>
+                
                 <form action="#" method="post">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" required>
                     <label for="email">Correo Electrónico:</label>
                     <input type="email" id="email" name="email" required>
                     <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <textarea placeholder="Rut, Direccion, Fono(WSP), Pedido " id="message" name="message" required></textarea>
                     <button type="submit">Enviar</button>
                 </form>  
             </div>
