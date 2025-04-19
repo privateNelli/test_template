@@ -34,6 +34,13 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Neon2';
+    src: url('/fonts/Neon.ttf') format('truetype'); /* Ruta a la fuente */
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 .navbar{
     width: 100%;
@@ -65,9 +72,8 @@ body {
 .weather-box{
     display: flex;
     justify-content: space-evenly;
-    gap: 0.1rem;
     width: 25rem;
-    padding: 1rem;
+    padding: 0.2rem;
     padding-bottom: 1em;
     margin-top: 10%;
     margin-left: 5%;
@@ -88,9 +94,9 @@ body {
 }
 
 .weather-box h3,p{
-    font-size: 1.2rem;
-    gap: 0.3rem;
-    font-family: 'SFPM', sans-serif; /* Aplicar la fuente personalizada */
+    font-size: 1.5rem;
+    gap: 0.1rem;
+    font-family: 'Neon2', sans-serif; /* Aplicar la fuente personalizada */
     text-align: center;
     text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
     justify-content: center;

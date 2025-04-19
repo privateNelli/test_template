@@ -1,39 +1,30 @@
-const data = null;
-
-const xhr = new XMLHttpRequest();
-
-xhr.addEventListener('readystatechange', function () {
-    if (this.readyState === this.DONE) {
-        console.log(this.responseText);
-
-        // Parsear la respuesta JSON
-        const weatherData = JSON.parse(this.responseText);
-
-        // Extraer la lista de pronósticos
-        const forecastList = weatherData.list;
-
-        // Seleccionar el contenedor donde se mostrarán los datos
-        const weatherBox = document.querySelector('.weather-box');
-
-        // Crear el contenido dinámico
-        let content = `<h3>¿Que se usa hoy?</h3>`;
-        forecastList.forEach((forecast, index) => {
-            if (index < 1) { // Mostrar solo los primeros 5 pronósticos
-                content += `
-                    <div class="forecast-item">
-                        <p>Temperatura: ${Math.round(forecast.main.temp)}°C</p>
-                    </div>
-                    <hr>
-                `;
-            }
-        });
-
-        // Actualizar el contenido en el HTML
-        weatherBox.innerHTML = content;
+const url = 'https://open-weather13.p.rapidapi.com/city/Santiago/ES';
+const options = {
+    method: 'GET',
+    headers: {
+        'x-rapidapi-key': 'e4901d53a5mshf89170677be3655p1215a6jsnc543650059cb',
+        'x-rapidapi-host': 'open-weather13.p.rapidapi.com'
     }
-});
+};
 
-xhr.open('GET', 'https://rapidweather.p.rapidapi.com/data/2.5/forecast?q=Santiago%2C%20Chile&cnt=40&units=metric&lang=es');
-xhr.setRequestHeader('x-rapidapi-key', 'e4901d53a5mshf89170677be3655p1215a6jsnc543650059cb');
-xhr.setRequestHeader('x-rapidapi-host', 'rapidweather.p.rapidapi.com');
-xhr.send(data);
+// Función para obtener datos de la API y mostrarlos en la vista
+async function fetchWeatherData() {
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json(); // Parsear la respuesta como JSON
+        const weatherContainer = document.getElementByClassName('weather-data');
+        
+        // Actualizar el contenido del contenedor con los datos obtenidos
+        weatherContainer.innerHTML = `
+            <p>¿Que se usa hoy?</p>
+            <p>Temperatura: ${result.main.temp}°C</p>
+            
+        `;
+    } catch (error) {
+        console.error(error);
+        document.getElementByClassName('weather-data').innerHTML = '<h3>Error fetching weather data.</h3>';
+    }
+}
+
+// Llamar a la función al cargar la página
+fetchWeatherData();
