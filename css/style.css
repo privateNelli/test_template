@@ -17,6 +17,10 @@ body {
     font-size: 20px;
 }
 
+.wicon{
+    float: left;
+}
+
 .bg-dark{
     color: rgb(172, 172, 172);
 }
@@ -66,42 +70,44 @@ body {
     display: none; /* Ocultar el menú por defecto */
 }
 
-
-
-
-.weather-box{
-    display: flex;
-    justify-content: space-evenly;
-    width: 25rem;
-    padding: 0.2rem;
-    padding-bottom: 1em;
-    margin-top: 10%;
-    margin-left: 5%;
-    flex-direction: row; /* Coloca los elementos en columna */
-    position: absolute; /* Necesario para posicionar los pseudo-elementos */
-    transition: transform 0.3s ease-in-out; /* Transición suave */
-    background-color: rgba(1, 8, 24, 0.87);
-    z-index: -2;
-    border: 1px solid rgba(52, 255, 238, 0.507); 
-    box-shadow: 0 0 10px rgb(79, 229, 255), 0 0 15px rgb(52, 241, 255); /* Sombra blanca */
-    flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias filas */
-    justify-content: center; /* Centrar los elementos horizontalmente */
-    align-items: center; /* Centrar los elementos verticalmente */
-    width: 23%; /* Ajustar el ancho para pantallas pequeñas */
-    margin: 8rem 1rem; /* Centrar el contenedor */
-    padding: 1rem;
-    text-align: center;
+.weather-box {
+    display: flex; /* Cambia a flexbox para alinear los elementos */
+    flex-direction: flex-start; /* Coloca los elementos en una fila */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Alinea los elementos al inicio */
+    position: absolute; /* Posiciona el contenedor de forma absoluta */
+    top: 13%; /* Ajusta la posición desde la parte superior */
+    left: 2%; /* Ajusta la posición desde la izquierda */
+    width: 18rem; /* Reduce el ancho del contenedor */
+    padding: 1rem; /* Espaciado interno */
+    background-color: rgba(1, 8, 24, 0.87); /* Fondo semitransparente */
+    border: 1px solid rgba(52, 255, 238, 0.507); /* Borde */
+    box-shadow: 0 0 10px rgb(79, 229, 255), 0 0 15px rgb(52, 241, 255); /* Sombra */
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
 }
 
-.weather-box h3,p{
-    font-size: 1.5rem;
-    gap: 0.1rem;
-    font-family: 'Neon2', sans-serif; /* Aplicar la fuente personalizada */
-    text-align: center;
-    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255);
-    justify-content: center;
-    align-items: center;
-    margin: 1rem;
+.align{
+    display: flex; /* Cambia a flexbox para alinear los elementos */
+    flex-direction: row; /* Coloca los elementos en una fila */
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Alinea los elementos al inicio */
+}
+
+.weather-box h3,
+.weather-box p {
+    margin: 0.5rem 0; /* Espaciado entre los elementos */
+    font-size: 1.3rem;
+    font-family: 'Neon2', sans-serif; /* Fuente personalizada */
+    color: white; /* Color del texto */
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 2px rgb(255, 255, 255); /* Sombra del texto */
+}
+
+.weather-box img {
+    width: 50px; /* Reduce el tamaño del ícono */
+    height: 50px; /* Mantiene la proporción */
+    margin-top: 0.5rem; /* Espaciado superior */
+    margin-left: 1rem;
 }
 
 .navbar ul{
